@@ -13,6 +13,6 @@ response = session.get("https://naver.com")
 print(response.html.links)
 
 response = requests.get("https://www.naver.com")
-bs = BeautifulSoup(response.text, "html.parser")
+bs = BeautifulSoup(response.text, 'lxml')
 for img in bs.select("img"):
     print(img)
