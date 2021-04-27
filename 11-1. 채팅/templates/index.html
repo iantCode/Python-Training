@@ -1,0 +1,25 @@
+<div class="messages">
+    <form>
+        <input type="text" class="nickname">
+        <input type="text" class="message">
+        <input type="submit" value="전송">
+    </form>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/1.7.4/socket.io.min.js"
+    integrity="sha512-qXjK7fRhV6plK/Vpaknn+5Fe0dXhJqdbiQKpLghl0XKir10zEEzSNqheA1MY7nh9H8cu7giAYTibHTBvt37PQg=="
+    crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
+<script type="text/javascript">
+    var socket = io.connect("http://" + document.domain + ":" + location.port);
+
+    socket.on("connect", function() {
+        socket.emit("connected");
+    });
+
+    socket.on("response", function() {
+        $("div.messages")
+    })
+
+</script>
